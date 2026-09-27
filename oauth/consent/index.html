@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src https://grooudbcplpqoucaihkm.supabase.co wss://grooudbcplpqoucaihkm.supabase.co; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Food App · Sign in</title>
+  <link rel="stylesheet" href="/food-app-auth/style.css">
+  <script defer src="/food-app-auth/config.js"></script>
+  <script defer src="/food-app-auth/app.js"></script>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">YOUR FAMILY KITCHEN</p>
+    <h1>Food App</h1>
+    <p class="intro">Your recipes, weekly meals and shopping list, ready for a conversation.</p>
+    <section id="login" hidden>
+      <h2>Sign in</h2>
+      <p>Enter your household email. We’ll send you a link to sign in.</p>
+      <form id="login-form">
+        <label for="email">Email address</label>
+        <input id="email" type="email" required autocomplete="email" placeholder="you@example.com">
+        <button type="submit">Email me a sign-in link</button>
+      </form>
+    </section>
+    <section id="consent" hidden>
+      <h2>Connect to your kitchen</h2>
+      <p><strong id="client-name"></strong> is asking to connect to Food App.</p>
+      <p>It will be able to read and update the recipes, stock, preferences and plans for households you belong to.</p>
+      <p id="scopes"></p>
+      <p class="detail">Return address: <span id="redirect-uri"></span></p>
+      <div class="actions">
+        <button id="approve">Connect</button>
+        <button id="deny" class="secondary">Cancel</button>
+      </div>
+    </section>
+    <section id="connected" hidden>
+      <h2>You’re signed in</h2>
+      <p id="household-status"></p>
+      <p>In ChatGPT, add a custom connection named <strong>Food App</strong> using this address:</p>
+      <code id="mcp-url">https://grooudbcplpqoucaihkm.supabase.co/functions/v1/food-mcp</code>
+      <button id="copy-url" class="secondary">Copy connection address</button>
+      <p>Choose OAuth when asked. After connecting, try: “Use Food App to record that mjölk is low.”</p>
+    </section>
+    <p id="message" role="status" aria-live="polite">Loading…</p>
+    <button id="signout" class="text-button" hidden>Sign out</button>
+    <footer>Household access is managed by your Food App owner.</footer>
+  </main>
+</body>
+</html>
