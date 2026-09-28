@@ -18,6 +18,7 @@
     <section id="login" hidden>
       <h2>Sign in</h2>
       <p>Enter your household email. We’ll send you a link to sign in.</p>
+      <p class="detail">Open the email link in this browser. If you read email in Gmail’s app, copy the link and paste it into this browser’s address bar.</p>
       <form id="login-form">
         <label for="email">Email address</label>
         <input id="email" type="email" required autocomplete="email" placeholder="you@example.com">
@@ -50,6 +51,13 @@
       <p>Return to ChatGPT, open <strong>Food App</strong> and choose <strong>Connect</strong> if it isn’t connected yet. Start a fresh request in this browser; you won’t need another email while you’re signed in.</p>
       <p><a href="https://chatgpt.com/plugins">Open ChatGPT plugins</a></p>
       <p><a href="/food-app-auth/">Check my household access</a></p>
+    </section>
+    <section id="email-limit" hidden>
+      <h2>Email limit reached</h2>
+      <p>Too many sign-in emails have been requested. The current email service allows two emails per hour. Wait for the allowance to reset before requesting one more.</p>
+      <p>If you already signed in through Gmail’s built-in browser, that login may be saved there. The next email link must open in the browser where you started the ChatGPT connection.</p>
+      <p>After the allowance resets, start a fresh Food App connection from ChatGPT and finish it promptly. Copy the new email link into this browser’s address bar.</p>
+      <button id="retry-email" class="secondary">Back to sign in</button>
     </section>
     <p id="message" role="status" aria-live="polite">Loading…</p>
     <button id="signout" class="text-button" hidden>Sign out</button>
